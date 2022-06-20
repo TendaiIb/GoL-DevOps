@@ -24,7 +24,7 @@ jobs:
         retention-days: 2
 
   telegram:
-    name: Build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
