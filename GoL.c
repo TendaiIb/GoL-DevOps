@@ -5,8 +5,8 @@
 //#include <dos.h>
 
 
-#define BOARD_WIDTH 20//Высота игрового поля
-#define BOARD_HEIGHT 20//Ширина игрового поля
+#define BOARD_WIDTH 40//Высота игрового поля
+#define BOARD_HEIGHT 40//Ширина игрового поля
 
 //инициация начального поля
 void initboard(int board[][BOARD_HEIGHT]) {
