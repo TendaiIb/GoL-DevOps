@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <dos.h>
+//#include <dos.h>
 
 
 #define BOARD_WIDTH 20//Высота игрового поля
