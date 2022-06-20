@@ -52,6 +52,7 @@ jobs:
 
   telegram:
     needs: build
+    if: always()
     runs-on: ubuntu-latest
     environment: enviroment
     steps:
@@ -60,6 +61,7 @@ jobs:
         with: 
           name: my-artifact
           path: my-artifact
+
       - name: build fail
         if: ${{ failure() }}
         uses: appleboy/telegram-action@master
