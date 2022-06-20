@@ -67,8 +67,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-          Что-то пошло не так. ${{ github.actor }} налажал. Вылезай из Телеги и иди фикси.
-          Репа: ${{ github.repository }}
+            Что-то пошло не так. ${{ github.actor }} налажал. Вылезай из Телеги и иди фикси.
+            Репа: ${{ github.repository }}
 
       - name: build succes
         uses: appleboy/telegram-action@master
