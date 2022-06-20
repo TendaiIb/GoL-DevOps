@@ -1,7 +1,7 @@
 FROM gcc:11 AS build
 WORKDIR /APP
 COPY . .
-RUN g++ hello.cpp -o app.exe
+RUN g++ GoL.c -o app.exe
 
 # FROM alpine:3.15
 # RUN apk add --no-cache libstdc++
