@@ -120,7 +120,7 @@ int main() {
 		a = cmpr(currgen, nextgen);
 		b = ifnull(nextgen);
 		cpy(currgen, nextgen);
-		//getchar();
+		getchar();
 		
 	} while ((a != 0) && (b != 0));
 	system("cls");
