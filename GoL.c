@@ -128,4 +128,3 @@ int main() {
 	if (b == 0) printf("Life has stoped, await for the next big bang");
 	if (a == 0) printf("Life has stabilized, nothing to see here anymore");
 	getchar();
-}
