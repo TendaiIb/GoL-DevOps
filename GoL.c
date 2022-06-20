@@ -120,11 +120,12 @@ int main() {
 		a = cmpr(currgen, nextgen);
 		b = ifnull(nextgen);
 		cpy(currgen, nextgen);
-		getchar();
+		//getchar();
 		
 	} while ((a != 0) && (b != 0));
 	system("cls");
 	print(nextgen);
 	if (b == 0) printf("Life has stoped, await for the next big bang");
 	if (a == 0) printf("Life has stabilized, nothing to see here anymore");
+	getchar();
 }
