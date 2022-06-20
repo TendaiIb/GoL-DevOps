@@ -55,16 +55,30 @@ jobs:
     runs-on: ubuntu-latest
     environment: enviroment
     steps:
-      - name: send telegram message on push
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with: 
+          name: my-artifact
+          path: my-artifact
+      - name: build fail
+        if: ${{ failure() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+          Что-то пошло не так. ${{ github.actor }} налажал. Вылезай из Телеги и иди фикси.
+          Репа: ${{ github.repository }}
+
+      - name: build succes
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           document: my-artifact/**
           message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
+            ${{ github.actor }} залил свежий коммит, он кажется даже не сломался:
             
-            Repository: ${{ github.repository }}
+            Репа: ${{ github.repository }}
             
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            Изменения: https://github.com/${{ github.repository }}/commit/${{github.sha}}
